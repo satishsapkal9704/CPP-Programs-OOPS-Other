@@ -1,0 +1,45 @@
+#include <QCoreApplication>
+#include<iostream>
+using namespace std;
+class Student{
+private:
+    string name;
+    int age;
+//public:
+//    Student(string name,int age)
+//    {
+//        this->name=name;
+//        this->age=age;
+//    }
+public:
+    string getName()
+    {
+        return name;
+    }
+    void setName(string name)
+    {
+        this->name=name;
+    }
+    int getAge()
+    {
+        return age;
+    }
+    void setAge(int age)
+    {
+        this->age=age;
+    }
+};
+int main()
+{
+    unique_ptr<Student> student1=make_unique<Student>();
+    student1->setName("Hello");
+    student1->setAge(45);
+    cout<<student1->getName()<<""<<student1->getAge()<<endl;
+    Student student;
+
+    student.setAge(22);
+    student.setName("satish");
+cout<<student.getName()<<endl;
+cout<<student.getAge();
+return 0;
+};

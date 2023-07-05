@@ -1,0 +1,37 @@
+
+#include<iostream>
+using namespace std;
+class Animal
+{
+public:
+    void eat()
+    {
+        cout<<"eatings"<<endl;
+    }
+};
+class Dog:public Animal
+{
+public:
+    void bark()
+    {
+        cout<<"barking dogs"<<endl;
+    }
+};
+int main()
+{
+// shared_ptr<Dog> dog=make_shared<Dog>();
+//    dog->eat();
+//    dog->bark();
+//    unique_ptr<Dog> dog=make_unique<Dog>();
+//    dog->eat();
+//    dog->bark();
+    Animal *ptr;
+    Dog dog;
+    ptr=&dog;
+    ptr->eat();
+    dog.eat();
+    dog.bark();
+    cout<<ptr;
+    cout<<&dog;
+   return 0;
+};

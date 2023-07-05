@@ -1,0 +1,58 @@
+References and Pointers
+There are 3 ways to pass C++ arguments to a function:
+1.Call-By-Value
+2.Call-By-Reference with a Pointer Argument
+3.Call-By-Reference with a Reference Argument
+
+#include <QCoreApplication>
+#include<iostream>
+using namespace std;
+int square1(int n)
+{ //pass by value
+    cout<<"adress of n is not same as n1"<<&n<<endl;
+    n=n*n;
+    return n;
+}
+int square2(int *n)
+{ //pass by value with refrence argument
+    cout<<"address of n in sqaure2 and square1 is same"<<n<<endl;
+    *n *=*n;
+}
+
+int square3(int & n)
+{
+
+    //pass by refrence with refrence argument
+    cout<<"address is same as n3"<<&n<<endl;
+    n=n*n;
+}
+void display()
+{   //===============================================================================
+    //call by value
+    int n1=8;
+    cout<<"adreess of n1 in main is"<<&n1<<endl;
+    cout<<"sqaure of n1 is"<<square1(n1)<<endl;
+    //===============================================================================
+
+    //================================================================================
+    //call by refrene with pointer argument
+    int n2=8;
+    cout<<"adress of n2 is"<<&n2<<endl;
+    square2(&n2);
+    cout<<"square of n2 is"<<n2<<endl;
+    //=================================================================================
+
+    //=================================================================================
+    //call by refrence with refrence argument
+    int n3=8;
+    cout<<"adrees of n3 is"<<&n3;
+    square3(n3);
+    cout<<"square of n3 is"<<n3<<endl;
+
+}
+
+int main()
+{
+    display();
+    return 0;
+};

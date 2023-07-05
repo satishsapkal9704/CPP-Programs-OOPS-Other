@@ -1,0 +1,31 @@
+#include <QCoreApplication>
+#include<iostream>
+using namespace std;
+class Animal
+{
+private:
+    int age;
+    string name;
+public:
+    Animal()
+    {
+        age=20;
+        name="Dog";
+    }
+    friend void display(Animal & a);
+};
+
+    void display(Animal &a)
+    {
+        cout<<"age is"<<a.age<<endl;
+        cout<<"name is"<<a.name<<endl;
+    }
+
+int main()
+{
+    Animal a2;
+   display(a2);
+   return 0;
+
+
+};

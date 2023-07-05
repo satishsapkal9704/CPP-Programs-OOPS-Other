@@ -1,0 +1,40 @@
+#include <QCoreApplication>
+#include<iostream>
+using namespace std;
+class Marks
+{
+private:
+    int internalMarks;
+    int externalMarks;
+public:
+    Marks()
+    {
+        internalMarks=0;
+        externalMarks=0;
+    }
+    Marks(int im,int em){
+        internalMarks=im;
+        externalMarks=em;
+    }
+    void disp()
+    {
+        cout<<internalMarks<<endl<<" "<<externalMarks<<endl;
+    }
+
+    Marks operator+(Marks m)
+    {
+        Marks temp;
+        temp.internalMarks=internalMarks+m.internalMarks;
+        temp.externalMarks=externalMarks+temp.externalMarks;
+        return temp;
+    }
+};
+
+int main()
+{
+    Marks m1(10,20);
+    Marks m2(45,20);
+ Marks m3=m1+m2;
+   m3.disp();
+   return 0;
+};

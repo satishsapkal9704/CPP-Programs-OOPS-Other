@@ -1,0 +1,38 @@
+#include <QCoreApplication>
+#include<iostream>
+using namespace std;
+class Animal
+{
+public:
+    virtual void eat()=0;
+    void bark()
+    {
+        cout<<"dogs are barking here"<<endl;
+    }
+};
+class Dog:public Animal
+{
+public:
+    void eat()
+    {
+        cout<<"doing here"<<endl;
+    }
+    void drink()
+    {
+        cout<<"drinkg"<<endl;
+    }
+};
+int main()
+{
+    /*Animal *ptr;
+    Dog dog;
+    ptr=&dog;
+    ptr->eat();
+    ptr->bark()*/;
+
+ shared_ptr<Dog> dog=make_shared<Dog>();
+ dog->eat();
+ dog->bark();
+ dog->drink();
+ return 0;
+};

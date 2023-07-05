@@ -1,0 +1,49 @@
+#include <QCoreApplication>
+#include<iostream>
+using namespace std;
+class Animal{
+public:
+    void eat()
+    {
+        cout<<"class 1"<<endl;
+    }
+};
+class Dog:public Animal{
+public:
+    void bark()
+    {
+        cout<<"barking class 2"<<endl;
+    }
+};
+class Cat:public Animal
+{
+public:
+    void meow()
+    {
+        cout<<"Cat is meowing"<<endl;
+    }
+};
+int main()
+{
+//    Animal *ptr1;
+//    Dog dog;
+//    ptr1=&dog;
+//    ptr1->eat();
+//    dog.eat();
+//    dog.bark();
+//    cout<<ptr1<<" "<<&dog<<endl;
+//    Animal *ptr2;
+//    Cat cat;
+//     ptr2=&cat;
+//      cout<<ptr2<<" "<<&cat<<endl;
+//      ptr2->eat();
+//      cat.eat();
+//      cat.meow();
+    shared_ptr<Cat> cat=make_shared<Cat>();
+    cat->eat();
+    cat->meow();
+    unique_ptr<Dog> dog=unique_ptr<Dog>();
+    dog->eat();
+    dog->bark();
+      return 0;
+};
