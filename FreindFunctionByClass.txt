@@ -1,0 +1,34 @@
+#include <QCoreApplication>
+#include<iostream>
+using namespace std;
+class Animal
+{
+private:
+    string name,city;
+
+public:
+    Animal()
+    {
+        name="Dog";
+        city="akola";
+    }
+public:
+    friend class Dog;
+};
+class Dog{
+public:
+    void display(Animal & a)
+    {
+        cout<<"name is"<<a.name<<endl;
+        cout<<"city is"<<a.city<<endl;
+
+    }
+};
+int main()
+{
+   Animal ani;
+   Dog dog;
+   dog.display(ani);
+   return 0;
+
+};

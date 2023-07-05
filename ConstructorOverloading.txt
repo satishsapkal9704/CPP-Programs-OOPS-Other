@@ -1,0 +1,35 @@
+#include <QCoreApplication>
+#include<iostream>
+using namespace std;
+#include<QDebug>
+class Emp
+{
+    public:
+    string name;
+    int age;
+    double salary;
+
+    Emp(string name,int age)
+    {
+        this->name=name;
+        this->age=age;
+    }
+    Emp(string name,int age,double salary)
+    {
+        this->name=name;
+        this->age=age;
+        this->salary=salary;
+    }
+    public:
+    void disp()
+    {
+        cout<<name<<" "<<age<<" "<<salary<<endl;
+    }
+};
+int main()
+{
+    Emp emp1= Emp("satish",22,4500);
+    Emp emp2=Emp("sa[pkal",45,2233.0);
+    return 0;
+
+};

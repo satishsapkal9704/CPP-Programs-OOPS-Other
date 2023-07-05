@@ -1,0 +1,22 @@
+#include <QCoreApplication>
+#include<iostream>
+#include<QDebug>
+using namespace std;
+int main()
+{
+    int a=30;
+    int*b=&a;
+   int **c=&b;
+
+   cout<<"adress of a"<<&a<<endl;    // address of a
+   cout<<"adress of b"<<b<<endl;     // adress of b
+   cout<<"value of b"<<*b<<endl;     //value of b
+   cout<<"adress of c"<<&c<<endl;    //adress of c
+   cout<<"adress of b"<<&b<<endl;     // adress of b
+   cout<<"value of c"<<*c<<endl;      //value of c
+   cout<<"value of value "<<**c<<endl;  // value of value c
+
+
+    return 0;
+
+};

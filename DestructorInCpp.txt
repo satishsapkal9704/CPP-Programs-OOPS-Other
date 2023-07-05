@@ -1,0 +1,21 @@
+#include <QCoreApplication>
+#include<iostream>
+#include<QDebug>
+using namespace std;
+class Emp{
+public:
+    Emp()
+    {
+        cout<<"constctor  is invoked"<<endl;
+    }
+    ~Emp()
+    {
+        cout<<"destructor is invoked"<<endl;
+    }
+
+};
+int main()
+{
+    Emp emp1;
+    Emp emp2;
+}

@@ -1,0 +1,44 @@
+#include <QCoreApplication>
+#include<iostream>
+#include<memory>
+using namespace std;
+void addNum(int& num)   // it is a reference to the original variable.
+{
+    num--;
+}
+int main()
+{
+    int number=12;
+    cout<<"before adding"<<number<<endl;
+    addNum(number);     // pass the number variable to the addNum function, it is passed by reference
+    cout<<"after adding"<<number<<endl;
+    return 0;
+};
+
+==================================================
+
+#include <QCoreApplication>
+#include<iostream>
+using namespace std;
+void swap(int x,int y)
+{
+    int swap
+            ;
+    swap=x;
+    x=y;
+    y=swap;
+}
+int main()
+{
+    int x=10,y=20;
+    swap(&x,&y)
+    {
+        cout<<x;
+        cout<<y;
+    };
+    return 0;
+};
+
+
+
+
