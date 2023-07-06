@@ -4,28 +4,33 @@ using namespace std;
 class Animal
 {
 private:
-    int age;
     string name;
+    int age;
 public:
     Animal()
     {
-        age=20;
-        name="Dog";
+         name="Satish";
+         age=22;
+
     }
-    friend void display(Animal & a);
+public:
+    friend void disp(Animal & a);
+    friend void disp2(Animal & a3);
 };
 
-    void display(Animal &a)
-    {
-        cout<<"age is"<<a.age<<endl;
-        cout<<"name is"<<a.name<<endl;
-    }
-
+void disp(Animal & a)
+{
+    cout<<"namwe and ag is"<<a.name<<a.age<<endl;
+}
+void disp2(Animal & a3)
+{
+    cout<<"name and age are as follows"<<a3.name<<a3.age<<endl;
+}
 int main()
 {
     Animal a2;
-   display(a2);
-   return 0;
-
-
+    disp(a2);
+    Animal a4;
+    disp2(a4);
+    return 0;
 };
