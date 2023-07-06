@@ -4,31 +4,42 @@ using namespace std;
 class Animal
 {
 private:
-    string name,city;
-
+    string name;
+    int age;
 public:
     Animal()
     {
-        name="Dog";
-        city="akola";
+         name="Satish";
+         age=22;
     }
 public:
-    friend class Dog;
+   friend class Dog;
+   friend class Cat;
 };
-class Dog{
+class Dog
+{
 public:
-    void display(Animal & a)
+    void disp(Animal & a)
     {
-        cout<<"name is"<<a.name<<endl;
-        cout<<"city is"<<a.city<<endl;
-
+        cout<<"name and sage are"<<a.name<<a.age<<endl;
     }
 };
+class Cat{
+public:
+    void fats(Animal & a2)
+    {
+        cout<<"name and age are"<<a2.name<<a2.age<<endl;
+    }
+};
+
 int main()
 {
-   Animal ani;
-   Dog dog;
-   dog.display(ani);
-   return 0;
+   Animal a1;
+   Animal a3;
+   Dog d1;
+   Cat c1;
+   d1.disp(a1);
+   c1.fats(a3);
+  return 0;
 
 };
