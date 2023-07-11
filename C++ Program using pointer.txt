@@ -1,0 +1,302 @@
+Single Inheritance using pointer
+#include <QCoreApplication>
+#include<iostream>
+using namespace std;
+#include<memory>
+class Animal{
+public:
+    void eat()
+    {
+        cout<<"animals are eaating in A class "<<" "<<endl;
+    }
+};
+class Dog:public Animal{
+public:
+    void bark()
+    {
+        cout<<"dogs are barking in B"<<" "<<endl;
+    }
+};
+int main()
+{
+    unique_ptr<Dog> dog =make_unique<Dog>();
+    dog->eat();
+    dog->bark();
+    return 0;
+};
+===============================================================
+MultiLevel Inheritance in C++
+#include <QCoreApplication>
+#include<iostream>
+using namespace std;
+#include<memory>
+class Animal{
+public:
+    void eat()
+    {
+        cout<<"animals are eaating in A class "<<" "<<endl;
+    }
+};
+class Dog:public Animal{
+public:
+    void bark()
+    {
+        cout<<"dogs are barking in B"<<" "<<endl;
+    }
+};
+class Cat:public Dog
+{
+public:
+   void cry()
+   {
+       cout<<"cat crying in c"<<endl;
+   }
+};
+
+int main()
+{
+    shared_ptr<Dog> dog =make_shared<Dog>();
+    dog->eat();
+    dog->bark();
+
+    unique_ptr<Cat> cat=make_unique<Cat>();
+    cat->cry();
+    cat->bark();
+    cat->eat();
+    return 0;
+};
+
+====================================================================
+
+Heirarichal Inheritance
+#include <QCoreApplication>
+#include<iostream>
+using namespace std;
+#include<memory>
+class Animal{
+public:
+    void eat()
+    {
+        cout<<"animals are eaating in A class "<<" "<<endl;
+    }
+};
+class Dog:public Animal{
+public:
+    void bark()
+    {
+        cout<<"dogs are barking in B"<<" "<<endl;
+    }
+};
+class Cat:public Animal
+{
+public:
+   void cry()
+   {
+       cout<<"cat crying in c"<<endl;
+   }
+};
+
+int main()
+{
+    shared_ptr<Dog> dog =make_shared<Dog>();
+    dog->eat();
+    dog->bark();
+    unique_ptr<Cat> cat=make_unique<Cat>();
+    cat->cry();
+    cat->eat();
+    return 0;
+};
+==============================================================================
+Multiple Inheritance In C++
+#include <QCoreApplication>
+#include<iostream>
+using namespace std;
+#include<memory>
+class Animal{
+public:
+  void eat()
+    {
+        cout<<"animals are eaating in A class "<<" "<<endl;
+    }
+};
+class Dog{
+public:
+    void bark()
+    {
+        cout<<"dogs are barking in B"<<" "<<endl;
+    }
+};
+class Cat:public Animal,public Dog
+{
+public:
+    void eat()
+    {
+        cout<<"Aniamls class implemention overriding in c class"<<endl;
+    }
+    void bark()
+    {
+        cout<<"dog are overridng in c class"<<endl;
+    }
+public:
+   void cry()
+   {
+       cout<<"cat crying in c"<<endl;
+   }
+};
+
+int main()
+{
+    unique_ptr<Cat> cat=make_unique<Cat>();
+    cat->cry();
+    cat->eat();
+    cat->bark();
+    return 0;
+};
+==========================================================================================================================
+
+Encapsulation Using pointer
+#include <QCoreApplication>
+#include<iostream>
+using namespace std;
+#include<memory>
+class Student{
+private:
+    string name;
+    int age;
+public:
+    void setName(string name)
+    {
+      this->name=name;
+    }
+    string getName()
+    {
+        return name;
+    }
+    void setAge(int age)
+    {
+       this-> age=age;
+    }
+    int getAge()
+    {
+        return age;
+    }
+};
+int main()
+{
+  shared_ptr<Student> student=make_shared<Student>();
+    student->setName("Satish");
+    student->setAge(22);
+    cout<<"name and age are"<<student->getName()<<student->getAge()<<endl;
+    return 0;
+};
+==============================================================================================================================================
+Polymorphism
+Method Overloading =with pointers
+note-method  having same name
+             return type is anything
+#include <QCoreApplication>
+#include<iostream>
+using namespace std;
+#include<memory>
+class Adder{
+public:
+    int add(int a,int b)
+    {
+        return a+b;
+    }
+    string add(string a,string b)
+    {
+        return a+b;
+    }
+    int add(int a,int b,int c)
+    {
+        return a+b-c;
+    }
+};
+int main()
+{
+    shared_ptr<Adder> adder=make_shared<Adder>();
+    cout<<"addition of two"<<adder->add(10,20)<<"adding two string"<<adder->add("satish","sapkal")<<"additing three"<<adder->add(10,20,10)<<endl;
+    return 0;
+};
+=====================================================================================================================================================
+Polymorphism:
+Method Overriding-with pointer
+note===method having same and same return type
+
+#include <QCoreApplication>
+#include<iostream>
+using namespace std;
+#include<memory>
+class Emp{
+public:
+    virtual void salary()
+    {
+        cout<<"salary in emp class 1"<<endl;
+    }
+};
+class Manager:public Emp
+{
+public:
+    void salary() override
+    {
+        cout<<"now salary is managed through Manager"<<endl;
+    }
+    void smile()
+    {
+      cout<<"after getting salary emp is smilling"<<endl;
+    }
+};
+int main()
+{
+    unique_ptr<Manager> manager=make_unique<Manager>();
+   manager->salary();
+   manager->smile();
+   return 0;
+};
+=========================================================================================================
+Abstraction:with pointer
+note-we can make cirtual function=0;
+#include <QCoreApplication>
+#include<iostream>
+using namespace std;
+#include<memory>
+class Animal
+{
+public:
+    virtual void eat()=0;
+    void drink()
+    {
+        cout<<"some animals are drinking in animal class"<<endl;
+    }
+
+};
+class Dog:public Animal
+{
+public:
+    void eat()
+    {
+    cout<<"animals are eating in dog class"<<endl;
+}
+    void bar()
+    {
+        cout<<"dogs are barking"<<endl;
+    }
+};
+int main()
+{
+    shared_ptr<Dog> dog=make_shared<Dog>();
+    dog->eat();
+    dog->bar();
+    dog->drink();
+    return 0;
+};
+==================================================================================================================
+
+
+// shared_ptr<Dog> dog=make_shared<Dog>();
+//    dog->eat();
+//    dog->bark();
+//    unique_ptr<Dog> dog=make_unique<Dog>();
+//    dog->eat();
+//    dog->bark();
