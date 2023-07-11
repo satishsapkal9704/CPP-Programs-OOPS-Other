@@ -1,0 +1,43 @@
+#include <QCoreApplication>
+#include<iostream>
+using namespace std;
+namespace first_name{
+void eat()
+{
+    cout<<"eatings"<<endl;
+}
+}
+namespace second_name{
+   void eat()
+   {
+       cout<<"barking"<<endl;
+   }
+}
+using namespace first_name;       //if we use this then we can directly call the method like in main(),eat();
+int main()
+{
+
+    //eat();
+  first_name::eat();    //calling first function
+  second_name::eat();    //calling second function
+  return 0;
+};
+
+
+#include <QCoreApplication>
+#include<iostream>
+using namespace std;
+namespace s1{
+int val=100;   //global variable
+}
+namespace s2{
+int val=200;   // global variablle
+}
+int main()
+{
+    int val=300;    //local variable
+    cout<<val<<endl;
+    cout<<s1::val<<endl;
+    cout<<s2::val<<endl;
+    return 0;
+};
