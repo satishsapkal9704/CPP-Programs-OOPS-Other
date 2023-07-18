@@ -1,0 +1,45 @@
+#include <QCoreApplication>
+#include<iostream>
+using namespace std;
+//template<class T>     //T called as placeholder
+//                     //T is depened on user sending argument
+// we can write any number of class argument also
+//eg template<class T1,class t2,class t3>
+//T findMax(T a,T b)
+
+//{
+//    return a+b;
+//}
+//int main()
+//        {
+
+//           int result=max<int>(10,20);
+//           cout<<result<<endl;
+
+//            float num11=10.20;
+//            float num22=40.50;
+//            float hideA=num11+num22;
+//            cout<<hideA<<endl;
+//        };
+//template<class t1,class t2>
+//float sum(t1 x,t2 y){
+//    return x+y;
+//}
+//int main()
+//{
+//    cout<<"float and int both are mixed"<<sum(10,10.20)<<endl;
+//    cout<<"only flot are"<<sum(10.20,20.30)<<endl;
+//    return 0;
+//};
+
+
+template<class T>
+T add(T a,T b){
+    return a+b;
+}
+int main()
+{
+    cout<<add(10,20)<<endl;
+    cout<<add(10.30,30.30)<<endl;
+    return 0;
+};
